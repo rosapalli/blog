@@ -104,7 +104,7 @@ class Post {
 
 //die() function calls replaced with trigger_error() calls
 //replace with structured exception handling
-    public static function uploadFile($title) {
+    public static function uploadFile(string $title) {
 
         if (empty($_FILES[self::InputKey])) {
 //die("File Missing!");
