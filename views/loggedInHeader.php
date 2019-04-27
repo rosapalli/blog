@@ -31,15 +31,14 @@
                             <li><a href="#">Subscribe</a></li>
                             <li><a href="#">Contact us</a></li>
                             <li><a href="#">About us</a></li>
-                            <li class="smallNav"><a style='float:left' href="#">Login</a></li>
-                            <li class="smallNav"><a style='float:left' href='#'>Register</a></li>
+                            <li class="smallNav"><a style='float:left' href="index.php?controller=user&action=logout">Logout</a></li>
                         </ul>
                     </div>  
                     <div id='search'>
-                        <form class="form-inline" action="#" method="get">
+                        <form class="form-inline" method="POST" action="index.php?controller=post&action=search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="float:right">Go</button>
                             <div style="overflow: hidden; padding-right:.5em">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                <input name ="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             </div>
                         </form>
                         <ul class="nav navbar-nav">

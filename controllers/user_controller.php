@@ -17,7 +17,6 @@ class UserController {
             require_once('views/users/login.php');
         } else {
             User::login();
-            header ("Location: loggedInHeader.php");
             require_once('views/users/welcome.php');
         }
     }

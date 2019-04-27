@@ -82,7 +82,7 @@ class User {
                 $_SESSION["email"] = $session->email;
                 $_SESSION['firstName'] = $session->firstName;
                 $_SESSION['lastName'] = $session->lastName;
-                $_SESSION['userID'] = $session->$id;
+                $_SESSION['userID'] = $session->id;
             } else {
                 throw new Exception('This user does not exist');
             }
