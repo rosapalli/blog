@@ -18,26 +18,26 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="?controller=pages&action=home" class="navbar-brand img-responsive"><img id="logo" src="views/images/standard/logo.png" width="120" alt="">
+                    <a href="/index.php?controller=pages&action=home" class="navbar-brand img-responsive"><img id="logo" src="views/images/standard/logo.png" width="120" alt="">
                     </a> 
                     <!-- Collection of nav links and other content for toggling -->
                     <div id="navbarCollapse" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="?controller=post&action=readAll">All Posts</a></li>
+                            <li><a href="/index.php?controller=post&action=readAll">All Posts</a></li>
                             <li><a href="#">Categories</a></li>
                             <li><a href="#">Authors</a></li>
                             <li><a href="#">Subscribe</a></li>
                             <li><a href="#">Get in Touch</a></li>
                             <li><a href="#">About us</a></li>
-                            <li class="smallNav"><a href="#">Login</a></li>
-                            <li class="smallNav"><a href='#'>Register</a></li>
+                            <li class="smallNav"><a href="?controller=user&action=login">Login</a></li>
+                            <li class="smallNav"><a href='?controller=user&action=register'>Register</a></li>
                         </ul>
                     </div>  
                     <div id='search'>
-                        <form class="form-inline" action="#" method="get">
+                        <form class="form-inline" method="POST" action="index.php?controller=post&action=search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="float:right">Go</button>
                             <div style="overflow: hidden; padding-right:.5em">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                <input name ="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             </div>
                         </form>
                         <ul class="nav navbar-nav">
@@ -49,4 +49,4 @@
         </nav>
     </body>
 
-</html>                            
+</html>        
