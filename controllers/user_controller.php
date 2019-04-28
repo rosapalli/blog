@@ -17,7 +17,8 @@ class UserController {
             require_once('views/users/login.php');
         } else {
             User::login();
-            require_once('views/users/welcome.php');
+            require_once('routes.php');
+            call('post','readMyPosts');
         }
     }
 
