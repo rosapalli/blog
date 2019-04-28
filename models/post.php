@@ -83,7 +83,7 @@ class Post {
             $req->execute();
 
 //upload product image if it exists
-            if (!empty($_FILES[self::InputKey]['title'])) {
+            if (empty($_FILES[self::InputKey]['title'])) {
                 Post::uploadFile($title);
             }
         }
@@ -120,7 +120,7 @@ class Post {
 
 //die() function calls replaced with trigger_error() calls
 //replace with structured exception handling
-    public static function uploadFile(string $title) {
+    public static function uploadFile($title) {
 
         if (empty($_FILES[self::InputKey])) {
 //die("File Missing!");
@@ -137,7 +137,7 @@ class Post {
         }
 
         $tempFile = $_FILES[self::InputKey]['tmp_name'];
-        $path = "C:/xampp/htdocs/MVC_Skeleton/views/images/";
+        $path = "C:/xampp/htdocs/blog2/views/images/";
         $destinationFile = $path . $title . '.jpeg';
 
         if (!move_uploaded_file($tempFile, $destinationFile)) {
@@ -161,5 +161,4 @@ class Post {
 
 }
 
-//public function unpublish($id)
 ?>
