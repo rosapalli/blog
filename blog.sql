@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 28, 2019 at 06:34 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.0.33
+-- Host: 127.0.0.1
+-- Generation Time: Apr 28, 2019 at 10:07 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.0.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -196,8 +196,6 @@ INSERT INTO `post` (`postID`, `postTitle`, `postDescription`, `postContent`, `po
 (315, 'Barrafina', NULL, 'Barrafina | Soho, Covent Garden & King’s Cross Restaurants\r\n\r\nLet us – for a brief moment – give thanks to Spain, who have gifted the world Pablo Picasso, Don Quixote, The Alliance of Civilisations and – probably most importantly – Barrafina.\r\n\r\nAt least, in a roundabout way, that is. See, Barrafina – London’s best Spanish restaurant – actually comes from two English brothers, Sam and Eddie Hart, inspired by the famous Cal Pep tapas restaurant in Barcelona.\r\n\r\nConsidering Barrafina’s significance in the London restaurant scene, it seems possible that someone, one day, many years from now, may ask you what it was like to dine there…\r\n\r\nAnd so we’ve prepared a sample response for you:\r\n\r\n“Imagine walking into a scleral-white, cosy eatery packed with stainless steel, marble and mirrors, and sitting down at an open kitchen bar where arguably London’s most prestigious Spanish tapas chefs are plating up a colourful mixture of both contemporary and traditional Mallorcan and Catalan tapas dishes.\r\n\r\n“Then, imagine leisurely perusing the menu, while watching those chefs gracefully slice wafer-thin, rose-pink cured meats from whole legs hanging on proud display above the bed of iced, fresh seafood behind the bar.\r\n\r\n“And finally, imagine being able to talk to the chefs while they recommend the perfect red and white wine and sherry pairings for the (Michelin-starred) dishes they’re plating you up, while the rest of the bar gaggle and bop their way through the thick atmosphere, to the music of modern Spain.”\r\n\r\nOr, alternatively, you could go and see for yourself.\r\n\r\nEither way.\r\n\r\nThere are now four branches of Barrafina in London, each of which serve that stupendous tapas menu bolstered by a few characteristic specials. Here’s what you can expect in each one:\r\n         BARRAFINA DEAN STREET | Soho\r\n         When the landlords of the original Barrafina on Frith Street decided to redevelop the building instead of continuing to host, you know, the most popular restaurant in London, the flagship set sail for Dean Street instead, where it’s made a new home in the ground floor of Quo Vadis (also run by the Harts). Sporting the characteristic marble dining counter, bustling open kitchen and somewhat Bavarian-looking beer pumps, it’s settled in nicely. Leave room for the Santiago tart; a traditional Galician almond cake.\r\n\r\nDetails: 26-27 Dean Street, W1D 3LL | Open M-S 12-3pm and 5-11pm, Sun 1-3.30pm, 5.30-10pm\r\n         \r\n         BARRAFINA ADELAIDE STREET | Covent Garden\r\n         Happily a little more spacious than its sibling, Barrafina Adelaide Street is flooded with light – and has a dedicated space for drinks while you’re waiting for your spot at the counter. There are subtle differences in the menu between each branch, so head here for a wider selection of seafood, or if you have a particular penchant for cuttlefish croquetas; crispy pig’s ears; and milk-fed lamb’s brain.\r\n\r\nDetails: 10 Adelaide Street, WC2N 4HZ | Open M-S 12-3pm and 5-11pm, Sun 1-3.30pm, 5.30-10pm', '2019-04-12', NULL, NULL, 106),
 (316, 'The Best Cheap Eats In London', 'Cutting back doesn’t mean that you have to deprive yourself of eating out and seeing your friends. London’s an expensive city, but there are plenty of inexpensive restaurants with excellent food. Here are our favourite places to get a good sit-down meal for £10 or less.', 'Bancone ££££ Italian in Covent GardenBancone is right off of Trafalgar Square. It’s home to a whole lot of marble. And it has things like rabbit pappardelle and saffron butter on the menu. We know what you’re thinking, ‘yeah, cool, I’ll visit as soon as that aunt with shares in Topshop kicks it’. But luckily, this handmade pasta spot is actually very affordable. You can go for any of their pasta mains (shoutout to the silk handkerchiefs with egg confit and hazelnut butter), split a bottle of wine, and leave only twenty quid lighter.\r\n          Ph?t Phúc Noodle Bar\r\nNo doubt inspired by some of SW3’s wealthier inhabitants, Phat Phuc Noodles is the most reasonable (and one of the most tasty) places to eat in Chelsea. This little courtyard stall serves up noodle dishes from across Asia - laksa, bun, and pho - all for under a tenner. It’s unlikely to be the best version of each you’ll ever try, but it’s the best in the area if you’re looking for a low price. There’s covered seating, or, if the sun’s out, uncovered seating, and it makes for very pleasant bite to eat.\r\n          \r\n Mr Bao\r\n££ Taiwanese in Peckham                 \r\nLondon is an expensive city. A pint and a soda water cost us eight quid recently. £8. We would’ve rather just drank our own tears. What a lot of people forget though, is that some of London’s best food (and we really do mean best) is a bargain. Mr. Bao is just that - an absolute bargain. This Peckham spot is a place worth travelling to, not least for their shiitake mushroom bao. On top of that the fried chicken is excellent, the atmosphere lovely, and you’ll be back at the end of the month to splurge.\r\n          \r\n      Yard Sale Pizza £ Pizza in Hackney   \r\n          Pizza really is the ultimate cheap eat. It always does the job. Yard Sale’s pizza more than do the job though. We think they’re one of the best in London. Split one of their huge 18-inch margheritas between three and you’re paying under a fiver each. That’s three whopper slices. Alternatively put a couple more quid in each and go for their TSB (tenderstem broccoli, manchego, pine nuts). It’s our go-to.', '2018-12-15', NULL, NULL, 103),
 (317, 'Pidgin, London E8 – restaurant review', 'This fixed-menu idea is nothing new, but the Pidgin team have made it fresh and vibrant as a citron pressé', 'In the restaurant business, there are bad amateurs and good amateurs. The bad ones will have made a few bob doing something else and think, “I’ll have me some of that.” They buy brick tiles and industrial lighting by the metre, smoke themselves some pig and stand back, waiting for the queues and rubbing their thighs. The good guys are those who, as the name suggests, just love the industry with a not-to-be-denied passion and, despite not being pros, can’t imagine doing anything else.\r\n\r\nIt’s into this latter category that I’d put the people behind Pidgin: James Ramsden and Sam Herlihy (neither trained in the restaurant business, but with a successful supperclub under their belts), alongside Elizabeth Allen in the kitchen. Allen’s most recent gig was at Neil Rankin’s ballsy Smokehouse in Islington; she’s staged at L’Enclume and has a love for Asian flavours – miso, sake lees, shiso, dashi. The result is bewitching.\r\n          Our four courses kick off with petals of raw mullet, the pristine fish set among radish, fennel tops and an intriguing squid-ink crisp, all underpinned by smoked fennel mayonnaise. Inevitably with a set, no-choice menu, there’s one dish that makes me think “nope”, but the squash spaghetti turns out to be our dinner’s dazzling turn. It’s not, as I’d imagined, spaghetti squash, but the less squelchy butternut, spiralised and dressed with brown butter and a nut-laced dukkah spice mix. At a time when many chefs think they need to dial flavours up to 11, the subtlety here is sexy: seductive interplay between textures, various degrees of nuttiness, including what looks alarmingly maggoty but turns out to be clever – puffed wild rice. If I’d seen this on a conventional menu, I’d never have ordered it. There’s a definite benefit to having your hands tied.', '2015-10-23', NULL, NULL, 103),
-(319, 'TESTING TESTING', 'NDIWNICW', 'DCWNCWI', '2008-09-08', NULL, NULL, 101),
-(320, 'this is the title', 'this should be post description', 'And this should be the content', '2019-04-27', NULL, NULL, 101),
 (321, 'test', 'test test', 'test test test', '2019-04-28', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -275,37 +273,31 @@ ALTER TABLE `replytocomment`
 --
 ALTER TABLE `bloguser`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
-
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=415;
-
 --
 -- AUTO_INCREMENT for table `commenttopost`
 --
 ALTER TABLE `commenttopost`
   MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=603;
-
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
   MODIFY `mediaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200;
-
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
   MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=322;
-
 --
 -- AUTO_INCREMENT for table `replytocomment`
 --
 ALTER TABLE `replytocomment`
   MODIFY `replyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=700;
-
 --
 -- Constraints for dumped tables
 --
