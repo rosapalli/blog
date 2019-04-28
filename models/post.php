@@ -83,7 +83,7 @@ class Post {
             $req->execute();
 
 //upload product image if it exists
-            if (!empty($_FILES[self::InputKey]['title'])) {
+            if (empty($_FILES[self::InputKey]['title'])) {
                 Post::uploadFile($title);
             }
         }
