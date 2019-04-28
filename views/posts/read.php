@@ -13,6 +13,6 @@ echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
 }
 
 ?>
-<p id="post"><?php echo $post->content; ?></p>
+<p id="post"><?php echo $post->content; ?></p
 
 	

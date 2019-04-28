@@ -23,7 +23,7 @@
                     <!-- Collection of nav links and other content for toggling -->
                     <div id="navbarCollapse" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.php?controller=post&action=readAll">All Posts</a></li>
+                            <li><a href="index.php?controller=post&action=readAll">Home</a></li>
                             <li><a href="#">Categories</a></li>
                             <li><a href="#">Authors</a></li>
                             <li><a href="#">Subscribe</a></li>
