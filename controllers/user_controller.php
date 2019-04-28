@@ -1,4 +1,3 @@
-
 <?php
 
 class UserController {
@@ -17,7 +16,8 @@ class UserController {
             require_once('views/users/login.php');
         } else {
             User::login();
-            require_once('views/users/welcome.php');
+            require_once('routes.php');
+            call('post','readMyPosts');
         }
     }
 
@@ -25,22 +25,5 @@ class UserController {
         User::logout();
         require_once('views/users/login.php');
     }
-
 }
-
-//$user = new User($_POST['username'], $_POST['password']);
-//
-//switch($action) {
-//    case 'login':
-//        echo $user->login();
-//        break;
-//    
-//    case 'logout':
-//        echo $user->logout(); 
-//        break;
-//
-//    default:
-//    return;
-//    
-//}
 ?>

@@ -1,21 +1,6 @@
-<div class="container">
-    <div class="row">
+<h2>Welcome Back, <?php echo $_SESSION['firstName']?>! </h2>
 
-        <div class="username">
-            <h2>Welcome <?php echo $_SESSION['firstName']; ?><i class="fa fa-map-marker"></i></h2>
-        </div>
-    </div>
-
-    <ul class="submenu" id="logout">
-        <a href="index.php?controller=user&action=logout" class="btn btn-default btn-sm">
-                Logout
-            </a>
-    </ul>           
-</div>
-
-<h2>Welcome Back! </h2>
-
-<p>Here is a list of all posts written by <?php echo $_SESSION['firstName']?></p>
+<p>Here is a list of all posts written by you</p>
 
 <?php foreach ($posts as $post) { ?>
     <div class="container" style="margin-bottom:30px" >

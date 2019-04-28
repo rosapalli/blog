@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-      <body>
+<body>
     <H1>Please Login</H1>
 
     <div class="container" >
@@ -24,7 +24,7 @@
                                         </button>
                                     </div>
                                 </form>
-                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
