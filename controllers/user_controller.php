@@ -27,20 +27,4 @@ class UserController {
     }
 
 }
-
-//$user = new User($_POST['username'], $_POST['password']);
-//
-//switch($action) {
-//    case 'login':
-//        echo $user->login();
-//        break;
-//    
-//    case 'logout':
-//        echo $user->logout(); 
-//        break;
-//
-//    default:
-//    return;
-//    
-//}
 ?>

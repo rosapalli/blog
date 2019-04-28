@@ -11,5 +11,5 @@
         <a href="index.php?controller=user&action=logout" class="btn btn-default btn-sm">
                 Logout
             </a>
-    </ul>
+    </ul>           
 </div>

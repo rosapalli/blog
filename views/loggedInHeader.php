@@ -25,7 +25,7 @@
                         <ul class="nav navbar-nav">
                             <li><a href="?controller=post&action=readAll">All Posts</a></li>
                             <li><a href="?controller=post&action=create">Add a new post</a></li>
-                            <li><a href="#">My Posts</a></li>
+                            <li><a href="?controller=post&action=readMyPosts">My Posts</a></li>
                             <li><a href="#">Category</a></li>
                             <li><a href="#">Authors</a></li>
                             <li><a href="#">Subscribe</a></li>

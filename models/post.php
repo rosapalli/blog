@@ -159,6 +159,20 @@ class Post {
         $req->execute(array('id' => $id));
     }
 
+    
+        public static function readMyPosts($userID) {
+        $list = [];
+        $db = Db::getInstance();
+
+        $sql = $db->prepare('SELECT * FROM post WHERE userID = :userID');
+        $sql->execute(array(':userID' => $userID));
+        $posts = $sql->fetchAll();
+        foreach ($posts as $post) {
+            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription']);
+        }
+        return $list;
+        
+    }
 }
 
 ?>

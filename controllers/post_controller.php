@@ -74,7 +74,13 @@ class PostController {
         $posts = Post::readAll();
         require_once('views/posts/readAll.php');
     }
-
+    
+    public function readMyPosts() {
+        $userID = $_SESSION['userID'];
+        // we store all the posts in a variable
+        $posts = Post::readMyPosts($userID);
+        require_once('views/posts/readMyPosts.php');
+    }
 }
 
 ?>
