@@ -20,7 +20,7 @@ class Post {
     public static function readAll() {
         $list = [];
         $db = Db::getInstance();
-        $req = $db->query('SELECT * FROM post');
+        $req = $db->query('SELECT * FROM post ORDER BY postDate DESC');
 // we create a list of Post objects from the database results
         foreach ($req->fetchAll() as $post) {
             $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription']);

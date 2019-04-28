@@ -1,6 +1,6 @@
-<h2>Welcome Back! </h2>
+<h2>Welcome Back, <?php echo $_SESSION['firstName']?>! </h2>
 
-<p>Here is a list of all posts written by <?php echo $_SESSION['firstName']?></p>
+<p>Here is a list of all posts written by you</p>
 
 <?php foreach ($posts as $post) { ?>
     <div class="container" style="margin-bottom:30px" >

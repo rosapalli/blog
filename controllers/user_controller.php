@@ -1,4 +1,3 @@
-
 <?php
 
 class UserController {
@@ -26,6 +25,5 @@ class UserController {
         User::logout();
         require_once('views/users/login.php');
     }
-
 }
 ?>
