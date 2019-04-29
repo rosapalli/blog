@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `blog`
+create database blogv2; 
+use blogv2;
 --
 
 -- --------------------------------------------------------
