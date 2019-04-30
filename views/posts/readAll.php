@@ -1,10 +1,19 @@
 <p>Here is a list of all posts:</p>
 
-<?php foreach($posts as $post) { ?>
-  
-    <?php echo "<h4>" . $post->title . "</h4><p>" . $post->description . "Published on: $post->date<br>"?> &nbsp; &nbsp;
-    <a href='?controller=post&action=read&id=<?php echo $post->id; ?>'>Read the whole story</a></p> &nbsp; &nbsp;<!--
--->    <a href='?controller=post&action=delete&id=<?php echo $post->id; ?>'>Delete</a> &nbsp; &nbsp;<!--
--->    <a href='?controller=post&action=update&id=<?php echo $post->id; ?>'> Edit this post</a> &nbsp;
-
+<?php foreach ($posts as $post) { ?>
+    <div class="container" style="margin-bottom:30px" >
+        <div class="col-md-6 col-md-offset-3 "> 
+            <div class="row card-columns">
+                <div class="card ">
+                    <div class="card-body">                      
+                        <?php echo '<h3 class="card-title">' . $post->title . "</h3>" ?> 
+                        <?php echo '<h5>' . $post->date . "</h5><br>" ?>  
+                        <?php echo '<h5>' . $post->categoryType . "</h5><br>" ?>  
+                        <?php echo '<p class="card-text text-left">' . $post->description . "</p>" ?> &nbsp;
+                        <a class="card-link" href='?controller=post&action=read&id=<?php echo $post->id; ?>'>Read the full story</a>&nbsp; 
+                    </div>   
+                </div>
+            </div>            
+        </div>
+    </div>
 <?php } ?>

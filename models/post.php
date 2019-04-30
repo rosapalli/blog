@@ -8,22 +8,25 @@ class Post {
     public $content;
     public $date;
     public $description;
+    public $categoryType;
 
-    public function __construct($id, $title, $content, $date, $description) {
+    public function __construct($id, $title, $content, $date, $description, $categoryType) {
         $this->id = $id;
         $this->title = $title;
         $this->content = $content;
         $this->date = $date;
         $this->description = $description;
+        $this->categoryType = $categoryType;
     }
 
     public static function readAll() {
         $list = [];
         $db = Db::getInstance();
-        $req = $db->query('SELECT * FROM post');
+        $req = $db->query('CALL readAllCategoriesbyPost');
+       //$req = $db->query('SELECT post.postID, post.postTitle, post.postContent, post.postDescription, post.postDate, GROUP_CONCAT(categoryType) FROM category_post LEFT JOIN post ON category_post.postID = post.postID LEFT JOIN category ON category_post.categoryID = category.categoryID GROUP BY postID  ORDER BY post.postDate DESC');
 // we create a list of Post objects from the database results
         foreach ($req->fetchAll() as $post) {
-            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription']);
+            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription'], $post['categoryType']);
         }
         return $list;
     }
@@ -32,12 +35,14 @@ class Post {
         $db = Db::getInstance();
 //use intval to make sure $id is an integer
         $id = intval($id);
-        $req = $db->prepare('SELECT * FROM post WHERE postID = :id');
+      //$req = $db->prepare('SELECT * FROM post WHERE postID = :id');
+      $req = $db->prepare('CALL CategorybyPostID(:id)');
+//      $req = $db->prepare('SELECT post.postID, post.postTitle, post.postContent, post.postDescription, post.postDate, GROUP_CONCAT(categoryType) AS categoryType FROM category_post LEFT JOIN post ON category_post.postID = post.postID LEFT JOIN category ON category_post.categoryID = category.categoryID GROUP BY postID ');
 //the query was prepared, now replace :id with the actual $id value
         $req->execute(array('id' => $id));
         $post = $req->fetch();
         if ($post) {
-            return new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription']);
+            return new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription'], $post['categoryType']);
         } else {
 //replace with a more meaningful exception
             throw new Exception('This post no longer exists.');
@@ -83,7 +88,7 @@ class Post {
             $req->execute();
 
 //upload product image if it exists
-            if (!empty($_FILES[self::InputKey]['title'])) {
+            if (empty($_FILES[self::InputKey]['title'])) {
                 Post::uploadFile($title);
             }
         }
@@ -120,7 +125,7 @@ class Post {
 
 //die() function calls replaced with trigger_error() calls
 //replace with structured exception handling
-    public static function uploadFile(string $title) {
+    public static function uploadFile($title) {
 
         if (empty($_FILES[self::InputKey])) {
 //die("File Missing!");
@@ -137,7 +142,7 @@ class Post {
         }
 
         $tempFile = $_FILES[self::InputKey]['tmp_name'];
-        $path = "C:/xampp/htdocs/MVC_Skeleton/views/images/";
+        $path = "C:/xampp/htdocs/blog2/views/images/";
         $destinationFile = $path . $title . '.jpeg';
 
         if (!move_uploaded_file($tempFile, $destinationFile)) {
@@ -159,7 +164,20 @@ class Post {
         $req->execute(array('id' => $id));
     }
 
+    
+        public static function readMyPosts($userID) {
+        $list = [];
+        $db = Db::getInstance();
+
+        $sql = $db->prepare('SELECT * FROM post WHERE userID = :userID');
+        $sql->execute(array(':userID' => $userID));
+        $posts = $sql->fetchAll();
+        foreach ($posts as $post) {
+            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription']);
+        }
+        return $list;
+        
+    }
 }
 
-//public function unpublish($id)
 ?>
