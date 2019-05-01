@@ -32,7 +32,7 @@ session_start();
         </div>
         <div>
             <footer >
-                Copyright &COPY; <?= date('Y'); ?>
+                <?php require_once('footer.php'); ?>
             </footer>
         </div>
     </body>
