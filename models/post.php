@@ -101,7 +101,7 @@ class Post {
 
     public static function create() {
         $db = Db::getInstance();
-        $req = $db->prepare("Insert into post(postTitle, postContent, postDescription, postDate) values (:title, :content, :description, NOW())");
+        $req = $db->prepare("Insert into post(postTitle, postContent, postDescription, postDate) values (:title, :content, :description, NOW())");  
         $req->bindParam(':title', $title);
         $req->bindParam(':content', $content);
         $req->bindParam(':description', $description);
@@ -120,6 +120,45 @@ class Post {
         $content = $filteredContent;
         $description = $filteredDescription;
         $req->execute();
+        
+        //select postID
+       $stmt = $db->prepare('SELECT * FROM post WHERE postTitle = :title AND postDescription =  :description');
+       $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':description', $description);
+        
+        //create an object for a post with those attributes
+        $stmt->execute();
+       $post = $stmt->fetch();
+       if ($post) {
+           $selectCategory = new Post ($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription'], null);
+       } 
+   // get the categories from the form
+    if (isset($_POST['category']) && $_POST['category'] != "") {
+            $filteredCategory[] = filter_input(INPUT_POST, 'category', FILTER_SANITIZE_SPECIAL_CHARS);
+        }    
+       $categories = $filteredCategory;
+      
+       //for each category as category
+  foreach ($categories as $category) {
+            $statement = $db->prepare('SELECT category.categoryID FROM category WHERE category.categoryType = :categoryType ');
+         $statement->bindParam(':categoryType', $category); 
+   $statement->execute();         
+  }
+      
+       
+       
+       //fetch all as an array
+       $categoriesID = $statement->fetchAll();
+       
+       foreach ($categoriesID as $categoryID) {
+           $row = $db->prepare('INSERT INTO category_post (postID, categoryID) VALUES (:postID, :categoryID) ');
+             $req->bindParam(':postID', $selectCategory->id);
+        $req->bindParam(':categoryID', $categoryID);
+           $row->execute();
+       }
+              
+       //insert each category into category post as a row
+       
 
 //upload product image
         Post::uploadFile($title);

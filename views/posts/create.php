@@ -6,8 +6,8 @@
         <input type="text" class="form-control" name="title" >
     </div> 
     <div class="form-group">
-        <label for="exampleFormControlSelect2">Select a category or categories</label>
-        <select multiple class="form-control" name="category" id="exampleFormControlSelect2">
+        <label>Select a category or categories</label>
+        <select multiple class="form-control" name="category[]">
             <option>Recipes</option>
             <option>Restaurants</option>
             <option>Food trends</option>
