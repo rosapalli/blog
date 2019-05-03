@@ -1,20 +1,35 @@
-<p>Fill in the following form to update an existing blog entry:</p>
-<form action="" method="POST" class="w3-container" enctype="multipart/form-data">
-    <h2>Update Post</h2>
-    <p>
-        <input class="w3-input" type="text" name="title" value="<?= $post->title; ?>">
-        <label>Title</label>
-    </p>
-    <p>
-        <input class="w3-input" type="text" name="content" value="<?= $post->content; ?>" >
-        <label>Content</label>
-    </p>
-    <p>
-        <input class="w3-input" type="text" name="description" value="<?= $post->description; ?>" >
-        <label>Description</label>
-    </p>
-        <!--<button><a href="?controller=post&action=unpublish&id=<?php echo $post->id; ?>">Unpublish</a>-->
+
+<form action="" method="POST" enctype="multipart/form-data">
+
+    <h2>Update post</h2>
+    <div class="form-group">
+        <label >Title</label>
+        <input type="text" class="form-control" name="title" value="<?= $post->title; ?>" >
+    </div> 
+    <!--<div class="form-group">
+        <label for="exampleFormControlSelect2">Select a category or categories</label>
+        <select multiple class="form-control" name="category" id="exampleFormControlSelect2">
+            <option>Recipes</option>
+            <option>Restaurants</option>
+            <option>Food trends</option>
+            <option>Food hacks</option>
+            <option>Desserts</option>
+        </select>
+    </div>-->
+</div>
+<div class="form-group">
     
+    <label>Description</label>
+    <textarea class="form-control" rows="3" name="description"> <?= $post->description; ?></textarea>
+</div>
+<div class="form-group">
+    <label>Content</label>
+    <textarea name="content" id="editor" rows="10"><?= $post->content; ?></textarea>
+</div>
+
+
+
+    <div class="form-group"
     <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
     <?php
     $file = 'views/images/' . $post->title . '.jpeg';
@@ -26,8 +41,15 @@
     }
     ?>
     <br/>
-    <input type="file" name="myUploader" class="w3-btn w3-pink" />
-    <p>
-        <input class="w3-btn w3-gray" type="submit" value="Update Post">
-    </p>
+    <input type="file" name="myUploader" class="form-control-file" />
+        <input type="submit" value="Update Post">
+    
+    </div>
 </form>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>

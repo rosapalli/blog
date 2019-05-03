@@ -13,4 +13,5 @@ else
 echo "<img src='views/images/standard/_noproductimage.png' width='150' />";
 }
 ?>
-<p id="post"><?php echo $post->content; ?></p
+<h4 id="date"><?php echo $post->description; ?></h4><br>
+<p id="post"><?php echo htmlspecialchars_decode($post->content); ?></p
