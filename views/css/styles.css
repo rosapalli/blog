@@ -70,6 +70,13 @@ h2 {
     padding-left: 30px;
 }
 
+.card-img-top {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    max-width:100%;
+}
+
 @media only screen and (min-width: 300px)  {body{ padding-top: 35%;} h1 {font-size:10vw; } h2 {font-size: 8vw;} img{width:40px;} .form-inline {padding-right: 1em; padding-top: .5em;}}
 @media only screen and (min-width: 401px)  {body{ padding-top: 15%; } img {width:50px;}}
 @media only screen and (min-width: 401px)  {body{ padding-top: 13%; } }
