@@ -18,7 +18,6 @@
                         <?php echo '<h3 class="card-title">' . $post->title . "</h3>" ?> 
                         <?php echo '<h5>' . $post->date . "</h5><br>" ?>  
                         <?php echo '<h5>' . $post->categoryType . "</h5>" ?>  
-
                         <?php echo '<p class="card-text text-left">' . $post->description . "</p>" ?> &nbsp;
                         <a class="card-link" href='?controller=post&action=read&id=<?php echo $post->id; ?>'>Read the full story</a>&nbsp;                      
                     </div>   
