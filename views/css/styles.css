@@ -70,7 +70,16 @@ h2 {
     padding-left: 30px;
 }
 
-@media only screen and (min-width: 300px)  {body{ padding-top: 35%;} h1 {font-size:10vw; } h2 {font-size: 8vw;} img{width:40px;} .form-inline {padding-right: 1em; padding-top: .5em;}}
+.card-img-top {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    max-width:100%;
+
+
+}
+
+/*@media only screen and (min-width: 300px)  {body{ padding-top: 35%;} h1 {font-size:10vw; } h2 {font-size: 8vw;} img{width:40px;} .form-inline {padding-right: 1em; padding-top: .5em;}}
 @media only screen and (min-width: 401px)  {body{ padding-top: 15%; } img {width:50px;}}
 @media only screen and (min-width: 401px)  {body{ padding-top: 13%; } }
 @media only screen and (min-width: 678px) {body {padding-top: 8%} img{width:60px;} h1 {font-size: 48px;} h2 {font-size: 28px;} }
@@ -78,4 +87,4 @@ h2 {
 @media only screen and (min-width: 900px) {body {padding-top: 15%}}
 @media only screen and (min-width: 991px) {body{ padding-top: 15%;} }
 @media only screen and (min-width: 1124px) {body {padding-top: 8% } img{width:100px;}}
-@media only screen and (min-width: 1300px) {h1 {font-size: 48px;}}
+@media only screen and (min-width: 1300px) {h1 {font-size: 48px;}}*/
