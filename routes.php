@@ -26,7 +26,7 @@
 // Add an entry for each new controller and its actions
 $controllers = array('pages' => ['home', 'error'],
                     'post' => ['readAll','read','create','update','delete', 'search','readMyPosts'],
-                    'user' => ['register','login','welcome','logout'],
+                    'user' => ['register','login','welcome','logout','checkCredentials'],
                     'comment' => ['create']
 );
 
