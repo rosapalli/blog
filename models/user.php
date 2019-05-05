@@ -1,4 +1,4 @@
- <?php
+<?php
 
 class User {
 
@@ -44,11 +44,26 @@ class User {
         $req->execute();
     }
 
-    function login() {
+    function checkCredentials() {
         $db = Db::getInstance();
         $statement = 'SELECT * FROM bloguser WHERE email = :email AND password = :password';
         $req = $db->prepare($statement);
+        $data = filter_input(INPUT_POST, 'u_data');
+        $credentials = json_decode($data, true);
 
+        $email = $credentials["email"];
+        $password = $credentials["password"];
+
+        $req->execute(array(':email' => $email, ':password' => $password));
+        $count = $req->rowCount();
+        return $count;
+    }
+
+    function login() {
+
+        $db = Db::getInstance();
+        $statement = 'SELECT * FROM bloguser WHERE email = :email AND password = :password';
+        $req = $db->prepare($statement);
 
         if (isset($_POST['email']) && $_POST['email'] != "") {
             $filteredEmail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -60,21 +75,20 @@ class User {
         $password = $filteredPassword;
 
         $req->execute(array(':email' => $email, ':password' => $password));
-            $user = $req->fetch();
-            if ($user) {
-                $session = new User($user['userID'],$user['firstName'], $user['lastName'], $user['email'], $user['password']);
-                $_SESSION["email"] = $session->email;
-                $_SESSION['firstName'] = $session->firstName;
-                $_SESSION['lastName'] = $session->lastName;
-                $_SESSION['userID'] = $session->userID;
-            } else {
-                throw new Exception('This user does not exist');
-            }
-        }
+        $user = $req->fetch();
+        if ($user) {
 
-        function logout() {
-            unset($_SESSION);
-            session_destroy();
+            $session = new User($user['userID'], $user['firstName'], $user['lastName'], $user['email'], $user['password']);
+            $_SESSION["email"] = $session->email;
+            $_SESSION['firstName'] = $session->firstName;
+            $_SESSION['lastName'] = $session->lastName;
+            $_SESSION['userID'] = $session->userID;
         }
+    }
 
-    }    
+    function logout() {
+        unset($_SESSION);
+        session_destroy();
+    }
+
+}

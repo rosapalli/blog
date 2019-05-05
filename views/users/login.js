@@ -1,55 +1,52 @@
-$(document).ready(function(){
-    /*Form Validation using Ajax */
+$(document).ready(function () {
     $("#loginForm").validate({
         rules: {
             password: {
-                required: true,
+                required: true
             },
             email: {
                 required: true,
                 email: true
-            },
+            }
         },
         messages: {
-            password:{
+            password: {
                 required: "Please enter your password"
-             },
+            },
             email: {
                 required: "Please enter your email address"
-            },
-        },
-        submitHandler: submitForm	
-    })	
-        
-    function submitForm() {	
-        //serialize user's input
-        var data = $("#loginForm").serialize();
-        
-        //jQuery ajax() Method more info on https://www.w3schools.com/jquery/ajax_ajax.asp
-        $.ajax({				
-                type : 'POST',
-                url  : '../../controllers/user_controller.php',
-                data : data,
-                
-                //before sending clear our the error message
-                beforeSend: function(){	
-                        $("#error").fadeOut();
-                },
-                
-                success : function(response){	
-                        // if post is sucessful, change the button's message and redirect to welcome page after 2seconds 
-                        if($.trim(response) === "1"){
-                                $("#loginSubmit").html('Signing In ...');
-                                setTimeout(' window.location.href = "index.php?controller=user&action=login"; ',2000);
-                        // if not, fade in the responce in error section after 1 second
-                        } else {									
-                                $("#error").fadeIn(1000, function(){						
-                                        $("#error").html(response).show();
-                                });
-                        }
-                }
-        });
-        return false;
-    }
-});
+            }
+        }
+    });
+    $('#loginForm').submit(function (e) {
+        e.preventDefault();
 
+        var email = $('input#email').val();
+        var password = $('input#password').val();
+
+        var dataArray = {
+            'email': email,
+            'password': password,
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: 'index.php?controller=user&action=checkCredentials',
+            data: {u_data: JSON.stringify(dataArray)},
+            success: function (response) {
+                content = $(response);
+                var routes = content[37].innerHTML;
+                console.log(routes);
+
+                if (routes === " 1") {
+                    $("#loginForm").unbind().submit();
+                } else {
+                    $("#error").fadeIn();
+                    $("#error").html("Wrong Credentials. Try again");
+                    $("#error").fadeOut(2000);
+                }
+            }
+        });
+    });
+    return false;
+});
