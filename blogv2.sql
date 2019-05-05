@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 03, 2019 at 06:50 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.0.33
+-- Host: 127.0.0.1
+-- Generation Time: May 05, 2019 at 03:09 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.0.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -27,6 +27,9 @@ DELIMITER $$
 -- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `CategorybyPostID` (IN `postID` INT)  begin
+
+
+
 SELECT post.postID, post.postTitle, post.postContent, post.postDescription, post.postDate, GROUP_CONCAT(categoryType) AS categoryType
 FROM category_post
 LEFT JOIN post
@@ -46,6 +49,17 @@ LEFT JOIN category
 ON category_post.categoryID = category.categoryID
 GROUP BY postID
 ORDER BY post.postDate DESC;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Search` (IN `keyword` VARCHAR(20))  begin
+SELECT post.postID, post.postTitle, post.postContent, post.postDescription, post.postDate, GROUP_CONCAT(categoryType) AS categoryType 
+FROM category_post 
+LEFT JOIN post 
+ON category_post.postID = post.postID 
+LEFT JOIN category 
+ON category_post.categoryID = category.categoryID 
+WHERE post.postTitle LIKE concat('%',keyword,'%') OR post.postContent LIKE concat('%',keyword,'%') OR category.categoryType LIKE concat('%',keyword,'%') 
+GROUP BY postID ORDER BY post.postDate DESC; 
 end$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `showAllPostsbyUser` (IN `userID` INT)  begin
@@ -316,37 +330,31 @@ ALTER TABLE `replytocomment`
 --
 ALTER TABLE `bloguser`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
-
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=415;
-
 --
 -- AUTO_INCREMENT for table `commenttopost`
 --
 ALTER TABLE `commenttopost`
   MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=603;
-
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
   MODIFY `mediaID` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
   MODIFY `postID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=337;
-
 --
 -- AUTO_INCREMENT for table `replytocomment`
 --
 ALTER TABLE `replytocomment`
   MODIFY `replyID` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Constraints for dumped tables
 --

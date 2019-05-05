@@ -3,11 +3,11 @@
     <h2>Add New Post</h2>
     <div class="form-group">
         <label >Title</label>
-        <input type="text" class="form-control" name="title" >
+        <input type="text" class="form-control" name="title" required >
     </div> 
     <div class="form-group">
         <label>Select a category or categories</label>
-        <select multiple class="form-control" name="category[]">
+        <select multiple class="form-control" name="category[]" required>
             <option>Breakfast</option>
             <option>Budget eats</option>
             <option>Cookery classes</option>
@@ -26,11 +26,11 @@
 <div class="form-group">
 
     <label>Description</label>
-    <textarea class="form-control" rows="3" name="description"></textarea>
+    <textarea required class="form-control" rows="3" name="description"></textarea>
 </div>
 <div class="form-group">
     <label>Content</label>
-    <textarea name="content" id="editor" rows="100"></textarea>
+    <textarea required name="content" id="editor" rows="100"></textarea>
 </div>
 
 
