@@ -60,7 +60,7 @@ class Post {
         $sql->execute(array(':keyword' => $keyword));
         $posts = $sql->fetchAll();
         foreach ($posts as $post) {
-            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription']);
+            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription'], null);
         }
         return $list;
     }
@@ -86,6 +86,34 @@ class Post {
             $content = $filteredContent;
             $description = $filteredDescription;
             $req->execute();
+            
+            //delete current category/ies
+            $postCategories = $db->prepare('DELETE FROM category_post WHERE postID = :id');
+            $postCategories->bindParam(':id', $id);
+            $postCategories->execute();
+                    
+            
+  // get the categories from the form
+        $categories = $_POST['category'];
+
+        $statement = $db->prepare('SELECT category.categoryID FROM category WHERE category.categoryType = :categoryType ');
+        $statement->bindParam(':categoryType', $category);
+        foreach ($categories as $category) {
+            $statement->execute();
+            $categoriesID[] = $statement->fetch(PDO::FETCH_ASSOC);
+        }
+
+        //fetch all as an array
+
+        foreach ($categoriesID as $row => $categoryID) {
+            foreach ($categoryID as $keys => $value) {
+                $req = $db->prepare('INSERT INTO category_post (postID, categoryID) values (:postID, :categoryID)');
+                $req->bindParam(':postID', $selectCategory->id);
+                $req->bindParam(':categoryID', $value);
+                $req->execute();
+            }
+        }
+          
 
 //upload product image if it exists
             if (empty($_FILES[self::InputKey]['title'])) {
@@ -116,6 +144,39 @@ class Post {
         $description = $filteredDescription;
         $req->execute();
 
+        //select postID
+        $stmt = $db->prepare('SELECT * FROM post WHERE postTitle = :title AND postDescription =  :description');
+        $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':description', $description);
+
+        //create an object for a post with those attributes
+        $stmt->execute();
+        $post = $stmt->fetch();
+        if ($post) {
+            $selectCategory = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription'], null);
+        }
+        // get the categories from the form
+        $categories = $_POST['category'];
+
+        $statement = $db->prepare('SELECT category.categoryID FROM category WHERE category.categoryType = :categoryType ');
+        $statement->bindParam(':categoryType', $category);
+        foreach ($categories as $category) {
+            $statement->execute();
+            $categoriesID[] = $statement->fetch(PDO::FETCH_ASSOC);
+        }
+
+        //fetch all as an array
+
+        foreach ($categoriesID as $row => $categoryID) {
+            foreach ($categoryID as $keys => $value) {
+                $req = $db->prepare('INSERT INTO category_post (postID, categoryID) VALUES (:postID, :categoryID)');
+                $req->bindParam(':postID', $selectCategory->id);
+                $req->bindParam(':categoryID', $value);
+                $req->execute();
+            }
+        }
+
+
 //upload product image
         Post::uploadFile($title);
     }
@@ -142,7 +203,7 @@ class Post {
         }
 
         $tempFile = $_FILES[self::InputKey]['tmp_name'];
-        $path = "C:/xampp/htdocs/blog2/views/images/";
+        $path = "/Applications/XAMPP/htdocs/blog/views/images";
         $destinationFile = $path . $title . '.jpeg';
 
         if (!move_uploaded_file($tempFile, $destinationFile)) {
@@ -168,15 +229,14 @@ class Post {
         public static function readMyPosts($userID) {
         $list = [];
         $db = Db::getInstance();
-
-        $sql = $db->prepare('SELECT * FROM post WHERE userID = :userID');
+        $sql = $db->prepare('CALL showAllPostsbyUser(:userID)');
+//        $sql = $db->prepare('SELECT * FROM post WHERE userID = :userID');
         $sql->execute(array(':userID' => $userID));
         $posts = $sql->fetchAll();
         foreach ($posts as $post) {
-            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription']);
+            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription'], $post['categoryType']);
         }
         return $list;
-        
     }
 }
 

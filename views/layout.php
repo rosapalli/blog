@@ -18,6 +18,8 @@ session_start();
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
         <!--<script src="views/users/login.js" type="text/javascript"></script>-->
         <link href="views/css/styles.css" rel="stylesheet" type="text/css"/>
+         <!--text editor-->
+        <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
         <title>WTF - Where's The Food!?</title>
     </head>
     <body>
