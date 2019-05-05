@@ -22,7 +22,6 @@ session_start();
     </head>
     <body>
         <header>
-
             <div class="container" id='title'>
                 <h1>Where's The Food!?!</h1>
             </div>
@@ -32,7 +31,7 @@ session_start();
         </div>
         <div>
             <footer >
-                Copyright &COPY; <?= date('Y'); ?>
+                <?php require_once('footer.php'); ?>
             </footer>
         </div>
     </body>
