@@ -10,7 +10,7 @@
                         <div class="row " >
                             <div class="col-lg-12" >
                                 <div class="alert alert-danger" role="alert" id="error" style="display: none;">...</div>
-                                <form id="loginForm" name="loginForm" role="form" style="display: block;" method="post" action="index.php?controller=user&action=register">
+                                <form id="register" name="register" role="form" style="display: block;" method="post" action="index.php?controller=user&action=register">
                                     <div class="form-group">
                                         <input type="name" name="firstName" id="firstName" tabindex="3" class="form-control" placeholder="First Name" value=""  required>
                                     </div>
