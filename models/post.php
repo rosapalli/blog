@@ -173,7 +173,7 @@ class Post {
         $sql->execute(array(':userID' => $userID));
         $posts = $sql->fetchAll();
         foreach ($posts as $post) {
-            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription']);
+            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription'], NULL);
         }
         return $list;
         
