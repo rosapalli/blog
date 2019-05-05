@@ -56,11 +56,11 @@ class Post {
             $filteredKeyword = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_SPECIAL_CHARS);
             $keyword = "%$filteredKeyword%";
         }
-        $sql = $db->prepare("SELECT * FROM post WHERE postTitle LIKE :keyword OR postContent LIKE :keyword");
+        $sql = $db->prepare("CALL Search(:keyword)");
         $sql->execute(array(':keyword' => $keyword));
         $posts = $sql->fetchAll();
         foreach ($posts as $post) {
-            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription']);
+            $list[] = new Post($post['postID'], $post['postTitle'], $post['postContent'], $post['postDate'], $post['postDescription'], $post['categoryType']);
         }
         return $list;
     }
