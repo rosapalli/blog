@@ -38,7 +38,7 @@ $(document).ready(function () {
                 var routes = content[37].innerHTML;
                 console.log(routes);
 
-                if (routes === " 1") {
+                if (routes === "1") {
                     $("#loginForm").unbind().submit();
                 } else {
                     $("#error").fadeIn();
