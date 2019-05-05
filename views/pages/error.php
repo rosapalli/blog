@@ -1,8 +1,13 @@
+<style>
+    img#error {
+        height: auto;
+        width: auto;
+    }
+</style>
+
 <div class="w3-container w3-red">
-<p>Oops, this is the error page.</p>
-<img src="views/images/standard/_errorimage.jpg" width="150" />
-<p>It looks like something went wrong :(</p>
-<h2> hahahaha </h2>
-hello
+<p>Oops, there has been an error</p>
+<img src="views/images/standard/_errorimage.jpg" id="error" />
+<p>Where has all the food gone?!</p>
 
 </div>
