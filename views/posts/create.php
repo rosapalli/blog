@@ -22,37 +22,25 @@
             <option>Spanish</option>
         </select>
     </div>
-<div class="form-group">
+    <div class="form-group">
 
-    <label>Description</label>
-    <textarea required class="form-control" rows="3" name="description"></textarea>
-</div>
-<div class="form-group">
-    <label>Content</label>
-    <textarea required name="content" id="editor" rows="100"></textarea>
-</div>
+        <label>Description</label>
+        <textarea required class="form-control" rows="3" name="description"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Content</label>
+        <textarea name="content" id="editor" rows="100"></textarea>
+    </div>
 
 
 
-<div class="form-group">
-    <label>Add your image</label>
-    <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-    <input type="file" class="form-control-file" name="myUploader" required />
-</div>
-<div class="form-group"> 
-    <input type="submit" value="Add Post">
-</div>
+    <div class="form-group">
+        <label>Add your image</label>
+        <input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+        <input type="file" class="form-control-file" name="myUploader" required />
+    </div>
+    <div class="form-group"> 
+        <input type="submit" value="Add Post">
+    </div>
 </form>
-<script>
-    ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
-</script>
-<style>
-    .ck-editor__editable_inline {
-        min-height: 400px;
-    }
 
-</style>

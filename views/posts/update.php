@@ -54,16 +54,5 @@
     
     </div>
 </form>
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
-<style>
-.ck-editor__editable_inline {
-    min-height: 400px;
-}
-</style>
+
     

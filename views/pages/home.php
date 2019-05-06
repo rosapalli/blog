@@ -47,8 +47,8 @@ div a:hover {
                     <p>Log In</p>
             </div>
             <div class="col-md-3">
-                <a href="index.php?controller=post&action=create"><img src="views/images/standard/_createapostimage.jpeg" id="homepage" alt="avocado create post">
-                    <p>Create Post</p>
+                <a href="index.php?controller=post&action=readAll"><img src="views/images/standard/_createapostimage.jpeg" id="homepage" alt="avocado read all posts">
+                    <p>Read All Posts</p>
             </div>
             <div class="col-md-3">
                 <a href="index.php?controller=post&action=advancedSearch"><img src="views/images/standard/_advancesearchimage.jpeg" id="homepage" alt="banana advance search">

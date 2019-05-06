@@ -3,15 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Blog/views/layout.php</file>
-            <file>file:/C:/xampp/htdocs/Blog/controllers/user_controller.php</file>
-            <file>file:/C:/xampp/htdocs/Blog/views/posts/read.php</file>
-            <file>file:/C:/xampp/htdocs/Blog/views/users/login.js</file>
-            <file>file:/C:/xampp/htdocs/Blog/connection.php</file>
-            <file>file:/C:/xampp/htdocs/Blog/models/user.php</file>
-            <file>file:/C:/xampp/htdocs/Blog/views/posts/create.php</file>
-            <file>file:/C:/xampp/htdocs/Blog/index.php</file>
-            <file>file:/C:/xampp/htdocs/Blog/views/users/login.php</file>
+            <file>file:/C:/xampp/htdocs/blog/views/Header.php</file>
         </group>
     </open-files>
 </project-private>
