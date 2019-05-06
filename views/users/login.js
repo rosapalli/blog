@@ -34,15 +34,15 @@ $(document).ready(function () {
             url: 'index.php?controller=user&action=checkCredentials',
             data: {u_data: JSON.stringify(dataArray)},
             success: function (response) {
-                console.log(response);
                 content = $(response);
-//                var routes = content[41].innerHTML;
-//                if (routes === "1") {
-//                    $("#loginForm").unbind().submit();
-//                } else {
-//                    $("#error").fadeIn(2000);
-//                    $("#error").html("Wrong Credentials. Try again");
-//                    $("#error").fadeOut(2000);
+                console.log($(response));
+                var routes = content[39].innerHTML;
+                if (routes === "1") {
+                    $("#loginForm").unbind().submit();
+                } else {
+                    $("#error").fadeIn(2000);
+                    $("#error").html("Wrong Credentials. Try again");
+                    $("#error").fadeOut(2000);
                 }
             }
         });
