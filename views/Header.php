@@ -7,7 +7,7 @@
         <title>WTF-Where's The Food?</title>
     </head> 
     <body>
-        <div class="bs-example">
+        <div class="nav1">
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -18,9 +18,9 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                            <a href="index.php?controller=pages&action=home" class="navbar-brand img-responsive"><img id="logo" src="views/images/standard/logo.png" width="120" alt="">
-                            </a>
-                        
+                        <a href="index.php?controller=pages&action=home" class="navbar-brand img-responsive brand">
+                            <img id="logo" src="views/images/standard/logo.png">
+                        </a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,7 +33,6 @@
                             <li><a href="index.php?controller=user&action=login">Login</a></li>
                             <li><a href="index.php?controller=user&action=register">Register</a></li>
                             <li><a href="index.php?controller=post&action=advancedSearch">Advanced Search</a></li>
-
                         </ul>
                         <form class="navbar-form navbar-right" method="POST" action="index.php?controller=post&action=search">
                             <div class="form-group">
