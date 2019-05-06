@@ -53,13 +53,13 @@
  <Br>
     <div class="container" id="about">
         <div class="row">
-            <div class="column">
+            <div class="col-md-4">
                 <img src="views/images/standard/aboutLeft.jpg" id="about" alt="left facing line up photo" style="width:100%">
             </div>
-            <div class="column">
+            <div class="col-md-4">
                 <img src="views/images/standard/aboutMiddle.jpg" id="about" alt="middle facing line up photo" style="width:100%">
             </div>
-            <div class="column">
+            <div class="col-md-4">
                 <img src="views/images/standard/aboutRight.jpg" id="about" alt="right facing line up photo" style="width:100%">
             </div>
         </div>
