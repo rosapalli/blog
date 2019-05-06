@@ -27,6 +27,7 @@
                             <li><a href="?controller=post&action=readAll">All posts</a></li>
                             <li><a href="?controller=post&action=create">Add a new post</a></li>
                             <li><a href="?controller=post&action=readMyPosts">My Posts</a></li>
+                            <li><a href="?controller=pages&action=about">About us</a></li>
                             <li class="smallNav"><a style='float:left' href="index.php?controller=user&action=logout">Logout</a></li>
                         </ul>
                     </div>  
