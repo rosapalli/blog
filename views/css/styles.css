@@ -75,12 +75,12 @@ h2 {
 }
 
 footer {
-  position: relative;
-  color: #3D405B;
-  background: lightgrey;
-  padding: 1px;
-  text-align: center;
-  width: 100%;
+    position: relative;
+    color: #3D405B;
+    background: lightgrey;
+    padding: 1px;
+    text-align: center;
+    width: 100%;
 }
 
 footer a {
@@ -93,12 +93,11 @@ footer a:hover {
     text-decoration: none;
 }
 
-@media only screen and (min-width: 300px)  {body{ padding-top: 35%;} h1 {font-size:10vw; } h2 {font-size: 8vw;} img{width:40px;} .form-inline {padding-right: 1em; padding-top: .5em;}}
-@media only screen and (min-width: 401px)  {body{ padding-top: 15%; } img {width:50px;}}
-@media only screen and (min-width: 401px)  {body{ padding-top: 13%; } }
+@media only screen and (min-width: 300px)  {body{ padding-top: 41%;}  #search{position:relative} h1 {font-size:10vw; } h2 {font-size: 8vw;} img{width:40px;} .form-inline {padding-right: 1em; padding-top: .5em;}}
+@media only screen and (min-width: 400px)  {body{ padding-top: 20%; } img {width:50px;}}
 @media only screen and (min-width: 678px) {body {padding-top: 8%} img{width:60px;} h1 {font-size: 48px;} h2 {font-size: 28px;} }
 @media only screen and (min-width: 768px) {body{ padding-top: 18%; } .form-inline {padding-right: 0em; padding-top: 0em;} } 
 @media only screen and (min-width: 900px) {body {padding-top: 15%}}
 @media only screen and (min-width: 991px) {body{ padding-top: 15%;} }
 @media only screen and (min-width: 1124px) {body {padding-top: 8% } img{width:100px;}}
-@media only screen and (min-width: 1300px) {h1 {font-size: 48px;}}
+@media only screen and (min-width: 1300px) {h1 {font-size: 48px;}} #search {position:absolute}}

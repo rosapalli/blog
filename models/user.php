@@ -62,6 +62,9 @@ class User {
     function login() {
 
         $db = Db::getInstance();
+        if (isset($_SESSION['email'])) {
+            echo "You are already logged in.";
+        }
         $statement = 'SELECT * FROM bloguser WHERE email = :email AND password = :password';
         $req = $db->prepare($statement);
 

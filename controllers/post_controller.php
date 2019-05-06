@@ -26,13 +26,27 @@ class PostController {
     public function search() {
         if (isset($_POST) == true) {
 
-            $posts = Post::search($_POST['search']);
+            $posts = Post::search();
             require_once('views/posts/searchResults.php');
         }
             if (empty($posts)) {
                 echo "<h4>No results found</h4>";
         }
     }
+    
+    
+ public function advancedSearch() {
+       if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+           require_once('views/posts/advancedSearch.php');
+       } else {
+           $posts = Post::advancedSearch();
+           require_once('views/posts/searchResults.php');
+   
+           if (empty($posts)) {
+               echo "<h4>No results found</h4>";
+       }
+       }
+   }
 
     public function create() {
         // we expect a url of form ?controller=products&action=create
@@ -44,7 +58,7 @@ class PostController {
             Post::create();
 
             $posts = Post::readAll(); //$products is used within the view
-            require_once('views/posts/readAll.php');
+            require_once('views/posts/readMyPosts.php');
         }
     }
 
@@ -56,23 +70,24 @@ class PostController {
 
             // we use the given id to get the correct product
             $post = Post::read($_GET['id']);
-
             require_once('views/posts/update.php');
         }
         else {
             $id = $_GET['id'];
             Post::update($id);
+        $userID = $_SESSION['userID'];
 
-            $posts = Post::readAll();
-            require_once('views/posts/readAll.php');
+            $posts = Post::readMyPosts($userID);
+            require_once('views/posts/readMyPosts.php');
         }
     }
 
     public function delete() {
         Post::delete($_GET['id']);
+        $userID = $_SESSION['userID'];
 
-        $posts = Post::readAll();
-        require_once('views/posts/readAll.php');
+        $posts = Post::readMyPosts($userID);
+        require_once('views/posts/readMyPosts.php');
     }
     
     public function readMyPosts() {

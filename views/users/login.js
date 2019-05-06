@@ -26,7 +26,7 @@ $(document).ready(function () {
 
         var dataArray = {
             'email': email,
-            'password': password,
+            'password': password
         };
 
         $.ajax({
@@ -36,12 +36,10 @@ $(document).ready(function () {
             success: function (response) {
                 content = $(response);
                 var routes = content[37].innerHTML;
-                console.log(routes);
-
                 if (routes === "1") {
                     $("#loginForm").unbind().submit();
                 } else {
-                    $("#error").fadeIn();
+                    $("#error").fadeIn(2000);
                     $("#error").html("Wrong Credentials. Try again");
                     $("#error").fadeOut(2000);
                 }

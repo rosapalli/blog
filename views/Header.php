@@ -9,7 +9,7 @@
     <body>
         <!--Nav bar starts here-->
         <nav class="navbar navbar-default navbar-fixed-top masthead" id="navbar">
-            <div class="container">
+            <div class="container" style="position:relative">
                 <!-- Brand and toggle get grouped for better mobile display -->               
                 <div class="navbar-header">
                     <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -21,28 +21,25 @@
                     <a href="index.php?controller=pages&action=home" class="navbar-brand img-responsive"><img id="logo" src="views/images/standard/logo.png" width="120" alt="">
                     </a> 
                     <!-- Collection of nav links and other content for toggling -->
-                    <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <div id="navbarCollapse" class="collapse navbar-collapse" style="float:right">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.php?controller=post&action=readAll">Home</a></li>
-                            <li><a href="#">Categories</a></li>
+                            <li><a href="index.php?controller=pages&action=home">Home</a></li>
+                            <li><a href="index.php?controller=post&action=readAll">All posts</a></li>
                             <li><a href="#">Authors</a></li>
-                            <li><a href="#">Subscribe</a></li>
-                            <li><a href="#">Get in Touch</a></li>
-                            <li><a href="#">About us</a></li>
                             <li class="smallNav"><a href="index.php?controller=user&action=login">Login</a></li>
                             <li class="smallNav"><a href='index.php?controller=user&action=register'>Register</a></li>
                         </ul>
                     </div>  
-                    <div id='search'>
+                    <div id='search' style="right:5%; margin-top: 3%">
                         <form class="form-inline" method="POST" action="index.php?controller=post&action=search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="float:right">Go</button>
                             <div style="overflow: hidden; padding-right:.5em">
                                 <input name ="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             </div>
+                            <ul class="nav navbar-nav">
+                                <li class="smallNav"><a href="index.php?controller=post&action=advancedSearch">Advanced Search</a></li>
+                            </ul>
                         </form>
-                        <ul class="nav navbar-nav">
-                            <li class="smallNav"><a href="#">Advanced Search</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
