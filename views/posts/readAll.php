@@ -28,11 +28,11 @@
                       
                       echo "                      
                         <div class='pull-right col-xs-2'>     
-                            <a href='?controller=post&action=delete&id=<?php $post->id; ?>' class='btn btn-warning'>Delete</a>
+                            <a href='?controller=post&action=delete&id=$post->id' class='btn btn-warning'>Delete</a>
                         </div>
 
                         <div class='pull-right col-xs-2'>     
-                            <a href='?controller=post&action=update&id=<?php echo $post->id; ?>' class='btn btn-warning'>Edit</a>&nbsp; 
+                            <a href='?controller=post&action=update&id=$post->id' class='btn btn-warning'>Edit</a>&nbsp; 
                         </div> ";
                   }
                     ?>
