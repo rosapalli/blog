@@ -28,6 +28,7 @@
                         <ul class="nav navbar-nav">
                             <li><a href="index.php?controller=pages&action=home">Home</a></li>
                             <li><a href="index.php?controller=post&action=readAll">All posts</a></li>
+                            <li><a href="index.php?controller=pages&action=about">Authors</a></li>
                             <li><a href="index.php?controller=pages&action=about">About us</a></li>
                             <li><a href="index.php?controller=user&action=login">Login</a></li>
                             <li><a href="index.php?controller=user&action=register">Register</a></li>
