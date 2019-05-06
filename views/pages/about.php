@@ -45,6 +45,9 @@
             column-gap: 30px;
             text-align: justify;
             padding: 10px 20px;
+            -webkit-column-width: 200px;
+            -moz-column-width: 200px;
+            column-width: 200px;
         }
     </style>
     
