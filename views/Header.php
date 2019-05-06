@@ -7,44 +7,42 @@
         <title>WTF-Where's The Food?</title>
     </head> 
     <body>
-        <!--Nav bar starts here-->
-        <nav class="navbar navbar-default navbar-fixed-top masthead" id="navbar">
-            <div class="container" style="position:relative">
-                <!-- Brand and toggle get grouped for better mobile display -->               
-                <div class="navbar-header">
-                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="index.php?controller=pages&action=home" class="navbar-brand img-responsive"><img id="logo" src="views/images/standard/logo.png" width="120" alt="">
-                    </a> 
-                    <!-- Collection of nav links and other content for toggling -->
-                    <div id="navbarCollapse" class="collapse navbar-collapse" style="float:right">
+        <div class="container example5">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="index.php?controller=pages&action=home" class="navbar-brand img-responsive brand">
+                            <img id="logo" style="width: 64px;" src="views/images/standard/logo.png">
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li><a href="index.php?controller=pages&action=home">Home</a></li>
                             <li><a href="index.php?controller=post&action=readAll">All posts</a></li>
-                            <li><a href="#">Authors</a></li>
-                            <li><a href="?controller=pages&action=about">About us</a></li>
-                            <li class="smallNav"><a href="index.php?controller=user&action=login">Login</a></li>
-                            <li class="smallNav"><a href='index.php?controller=user&action=register'>Register</a></li>
+                            <li><a href="index.php?controller=pages&action=about">Authors</a></li>
+                            <li><a href="index.php?controller=pages&action=about">About us</a></li>
+                            <li><a href="index.php?controller=user&action=login">Login</a></li>
+                            <li><a href="index.php?controller=user&action=register">Register</a></li>
+                            <li><a href="index.php?controller=post&action=advancedSearch">Advanced Search</a></li>
                         </ul>
-                    </div>  
-                    <div id='search' style="right:5%; margin-top: 3%">
-                        <form class="form-inline" method="POST" action="index.php?controller=post&action=search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="float:right">Go</button>
-                            <div style="overflow: hidden; padding-right:.5em">
-                                <input name ="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="navbar-form navbar-right" method="POST" action="index.php?controller=post&action=search">
+                            <div class="form-group">
+                                <input name ="search" type="search" type="text" class="form-control" placeholder="Search">
                             </div>
-                            <ul class="nav navbar-nav">
-                                <li class="smallNav"><a href="index.php?controller=post&action=advancedSearch">Advanced Search</a></li>
-                            </ul>
+                            <button type="submit" class="btn btn-default">Go</button>
                         </form>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </body>
-
-</html>        
+</html>                            

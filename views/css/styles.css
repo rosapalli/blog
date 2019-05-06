@@ -19,20 +19,9 @@ h2 {
     color: #3D405B;
 }
 
-#logo { 
-    height: auto;
-    float:left;
-    margin: 5px;
-    display: inline-block;
-}
-
 #title {
     text-align: center;
     padding: 10px;
-}
-
-.smallNav {
-    font-size: 15px;
 }
 
 #search {
@@ -91,6 +80,42 @@ footer a {
 footer a:hover {
     color: #FF521B;
     text-decoration: none;
+}
+
+/*.example5 .navbar-brand {
+    padding: 0px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+     height: 100%;
+    width: auto;
+    padding: 7px 14px; 
+}
+
+.navbar-brand {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  white-space: nowrap;
+}*/
+
+
+.example5 .navbar-brand {
+  height: 80px;
+}
+
+.example5 .nav >li >a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.example5 .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+
+.navbar-custom {
+    color: #FFFFFF;
 }
 
 @media only screen and (min-width: 300px)  {body{ padding-top: 41%;}  #search{position:relative} h1 {font-size:10vw; } h2 {font-size: 8vw;} img{width:40px;} .form-inline {padding-right: 1em; padding-top: .5em;}}

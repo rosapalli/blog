@@ -35,7 +35,8 @@ $(document).ready(function () {
             data: {u_data: JSON.stringify(dataArray)},
             success: function (response) {
                 content = $(response);
-                var routes = content[41].innerHTML;
+                console.log($(response));
+                var routes = content[39].innerHTML;
                 if (routes === "1") {
                     $("#loginForm").unbind().submit();
                 } else {
