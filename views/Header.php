@@ -7,7 +7,7 @@
         <title>WTF-Where's The Food?</title>
     </head> 
     <body>
-        <div class="nav1">
+        <div class="container example5">
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -19,7 +19,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a href="index.php?controller=pages&action=home" class="navbar-brand img-responsive brand">
-                            <img id="logo" src="views/images/standard/logo.png">
+                            <img id="logo" style="width: 64px;" src="views/images/standard/logo.png">
                         </a>
                     </div>
 
@@ -28,7 +28,6 @@
                         <ul class="nav navbar-nav">
                             <li><a href="index.php?controller=pages&action=home">Home</a></li>
                             <li><a href="index.php?controller=post&action=readAll">All posts</a></li>
-                            <li><a href="#">Authors</a></li>
                             <li><a href="index.php?controller=pages&action=about">About us</a></li>
                             <li><a href="index.php?controller=user&action=login">Login</a></li>
                             <li><a href="index.php?controller=user&action=register">Register</a></li>
