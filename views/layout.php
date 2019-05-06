@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['email']) == true) {
     require_once('loggedInHeader.php');
 } else {
-    require_once('header.php');
+    require_once('header0.php');
 }
 ?>
 <html>
