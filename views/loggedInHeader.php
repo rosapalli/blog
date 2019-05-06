@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>WTF-Where's The Food?</title>
-    </head> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+        <script src="views/users/login.js" type="text/javascript"></script>
+        <link href="views/css/styles.css" rel="stylesheet" type="text/css"/>
+        <!--text editor-->
+        <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
+        <title>WTF - Where's The Food!?</title>
+    </head>
     <body>
-        <!--Nav bar starts here-->
-        <nav class="navbar navbar-default navbar-fixed-top masthead" id="navbar">
-            <div class="container" style="position:relative">
-                <!-- Brand and toggle get grouped for better mobile display -->               
-                <div class="navbar-header">
-                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="?controller=pages&action=home" class="navbar-brand img-responsive"><img id="logo" src="views/images/standard/logo.png" width="120" alt="">
-                    </a> 
-                    <!-- Collection of nav links and other content for toggling -->
-                    <div id="navbarCollapse" class="collapse navbar-collapse" style="float:right">
+        <div class="bs-example">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                            <a href="index.php?controller=pages&action=home" class="navbar-brand img-responsive"><img id="logo" src="views/images/standard/logo.png" width="120" alt="">
+                            </a>
+                        
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="?controller=pages&action=home">Home</a></li>
-                            <li><a href="?controller=post&action=readAll">All posts</a></li>
-                            <li><a href="?controller=post&action=create">Add a new post</a></li>
-                            <li><a href="?controller=post&action=readMyPosts">My Posts</a></li>
-                            <li><a href="?controller=pages&action=about">About us</a></li>
-                            <li class="smallNav"><a style='float:left' href="index.php?controller=user&action=logout">Logout</a></li>
+                            <li><a href="index.php?controller=pages&action=home">Home</a></li>
+                            <li><a href="index.php?controller=post&action=readAll">All posts</a></li>
+                            <li><a href="index.php?controller=post&action=create">Add a new post</a></li>
+                            <li><a href="index.php?controller=post&action=readMyPosts">My Posts</a></li>
+                            <li><a href="index.php?controller=pages&action=about">About us</a></li>
+                            <li><a href="index.php?controller=user&action=logout">Logout</a></li>
+                            <li><a href="index.php?controller=post&action=advancedSearch">Advanced Search</a></li>
                         </ul>
-                    </div>  
-                    <div id='search' style="right:5%; margin-top: 3%">
-                        <form class="form-inline" method="POST" action="index.php?controller=post&action=search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="float:right">Go</button>
-                            <div style="overflow: hidden; padding-right:.5em">
-                                <input name ="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="navbar-form navbar-right" method="POST" action="index.php?controller=post&action=search">
+                            <div class="form-group">
+                                <input name ="search" type="search" type="text" class="form-control" placeholder="Search">
                             </div>
+                            <button type="submit" class="btn btn-default">Go</button>
                         </form>
-                        <ul class="nav navbar-nav">
-                            <li class="smallNav"><a href="index.php?controller=post&action=advancedSearch">Advanced Search</a></li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </body>
-
 </html>                            
