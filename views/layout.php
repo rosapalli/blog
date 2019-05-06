@@ -34,5 +34,19 @@ if (isset($_SESSION['email']) == true) {
             </footer>
         </div>
         <script id="dsq-count-scr" src="//wheresthefood-1.disqus.com/count.js" async=""></script>
+        <script>
+            ClassicEditor
+                    .create(document.querySelector('#editor'))
+                    .catch(error => {
+                        console.error(error);
+                    });
+        </script>
+        <style>
+            .ck-editor__editable_inline {
+                min-height: 400px;
+            }
+
+        </style>
+
     </body>
 </html>

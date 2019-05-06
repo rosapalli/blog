@@ -16,7 +16,7 @@
                     <?php echo '<h5>' . $post->date . "</h5><br>" ?>  
                     <?php echo "<h5>Written by $post->firstName $post->lastName</h5>" ?>  
                     <?php echo '<h5>' . $post->categoryType . "</h5>" ?>
-                    <h5><a  href='?controller=post&action=read&id=<?php echo $post->id; ?>#disqus_thread'></a>&nbsp;</h5><br>
+                    <h5><a  href='?controller=post&action=read&id=<?php echo $post->id ?>#disqus_thread'></a>&nbsp;</h5><br>
                     <?php echo '<h5>' . $post->description . "</h5><br>" ?>                       
                     <?php echo '<p class="card-text text-left">' . htmlspecialchars_decode($post->content) . "</p>" ?> &nbsp;
                     <div id="disqus_thread"></div>
@@ -27,7 +27,7 @@
                          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
                         var disqus_config = function () {
-                            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.url = 'http://localhost/blog/index.php?controller=post&action=read&id=';  // Replace PAGE_URL with your page's canonical URL variable
                             this.page.identifier = <?php echo $post->id; ?>; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                         };
 
