@@ -26,8 +26,8 @@
 // Add an entry for each new controller and its actions
 $controllers = array('pages' => ['home', 'error', 'about'],
                     'post' => ['readAll','read','create','update','delete', 'search','readMyPosts', 'advancedSearch'],
-                    'user' => ['register','login','welcome','logout','checkCredentials'],
-                    'comment' => ['create']
+                    'user' => ['register','login','welcome','logout','checkCredentials']
+                    
 );
 
   // check that the requested controller and action are both allowed

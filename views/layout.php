@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
 session_start();
-            if (isset($_SESSION['email']) == true) {
-                require_once('loggedInHeader.php');
-            } else {
-                require_once('header.php');
-            }
+if (isset($_SESSION['email']) == true) {
+    require_once('loggedInHeader.php');
+} else {
+    require_once('header.php');
+}
 ?>
 <html>
     <head>
@@ -17,6 +17,8 @@ session_start();
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
         <script src="views/users/login.js" type="text/javascript"></script>
         <link href="views/css/styles.css" rel="stylesheet" type="text/css"/>
+        <!--text editor-->
+        <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
         <title>WTF - Where's The Food!?</title>
     </head>
     <body>
@@ -25,11 +27,12 @@ session_start();
                 <h1>Where's The Food!?!</h1>
             </div>
         </header>
-        <div id="routes"><?php require_once('routes.php');?></div>
+        <div id="routes"><?php require_once('routes.php'); ?></div>
         <div>
             <footer >
                 <?php require_once('footer.php'); ?>
             </footer>
         </div>
+        <script id="dsq-count-scr" src="//wheresthefood-1.disqus.com/count.js" async=""></script>
     </body>
 </html>

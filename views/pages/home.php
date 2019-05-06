@@ -51,7 +51,7 @@ div a:hover {
                     <p>Create Post</p>
             </div>
             <div class="col-md-3">
-                <a href="index.php?controller=pages&action=home"><img src="views/images/standard/_advancesearchimage.jpeg" id="homepage" alt="banana advance search">
+                <a href="index.php?controller=post&action=advancedSearch"><img src="views/images/standard/_advancesearchimage.jpeg" id="homepage" alt="banana advance search">
                     <p>Advance Search</p>
             </div>
         </div>
