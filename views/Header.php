@@ -32,7 +32,7 @@
                             <li><a href="index.php?controller=pages&action=about">About us</a></li>
                             <li><a href="index.php?controller=user&action=login">Login</a></li>
                             <li><a href="index.php?controller=user&action=register">Register</a></li>
-                            <li><a href="index.php?controller=post&action=advancedSearch">Advance Search</a></li>
+                            <li><a href="index.php?controller=post&action=advancedSearch">Advanced Search</a></li>
                         </ul>
                         <form class="navbar-form navbar-right" method="POST" action="index.php?controller=post&action=search">
                             <div class="form-group">
